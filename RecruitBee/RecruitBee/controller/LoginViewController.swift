@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    
+
     @IBAction func registerButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "toRegisterScreen", sender: self)
     }
