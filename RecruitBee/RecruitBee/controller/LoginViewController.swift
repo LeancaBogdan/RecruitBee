@@ -20,6 +20,10 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBAction func registerButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toRegisterScreen", sender: self)
+    }
+    
     @IBAction func loginButtonPressed(_ sender: Any) {
     }
 }
