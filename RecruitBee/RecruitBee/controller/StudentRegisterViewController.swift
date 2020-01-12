@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class StudentRegisterViewController: UIViewController {
 
@@ -25,5 +26,25 @@ class StudentRegisterViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: Any) {
+        guard let email = emailTextField.text else {
+            print("Firebase registration email text field empty")
+            return
+        }
+        
+        guard let password = passwordTextField.text else {
+            print("Firebase registration email text field empty")
+            return
+        }
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            
+            if error != nil {
+                print(error!)
+                return
+            } else {
+                print(authResult!)
+            }
+            
+            
+        }
     }
 }
