@@ -29,6 +29,19 @@ class StudentUpdateViewController: UIViewController, UIImagePickerControllerDele
         
         profileImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImage)))
         profileImage.isUserInteractionEnabled = true
+        
+        self.ref.child("students").child(user!.uid).observeSingleEvent(of: .value) { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+                
+            if value == nil {
+                return
+            }
+            else {
+                self.firstNameLabel.text = value!["firstname"] as? String
+                self.lastNameLabel.text = value!["lastname"] as? String
+            }
+            
+        }
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {

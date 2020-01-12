@@ -374,7 +374,6 @@
                                 </state>
                                 <connections>
                                     <action selector="registerButtonPressed:" destination="o8I-Zo-hpm" eventType="touchUpInside" id="Lwf-7K-LnH"/>
-                                    <segue destination="cO2-5O-kJ3" kind="presentation" modalPresentationStyle="fullScreen" id="foO-Bv-iWE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -400,11 +399,12 @@
                         <outlet property="companyNameTextField" destination="eTl-XE-6cD" id="OJb-iD-Y36"/>
                         <outlet property="emailTextField" destination="kln-jj-7A3" id="U97-41-CIJ"/>
                         <outlet property="passwordTextField" destination="MRL-un-Pub" id="z8B-uo-kyT"/>
+                        <segue destination="cO2-5O-kJ3" kind="presentation" identifier="toCompanyUpdate" modalPresentationStyle="fullScreen" id="mgi-PV-fm1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8M-tK-48F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="-330"/>
+            <point key="canvasLocation" x="974" y="-207"/>
         </scene>
         <!--Company Update View Controller-->
         <scene sceneID="f5f-cV-s2g">
@@ -426,8 +426,8 @@
                                     <constraint firstAttribute="height" constant="200" id="1DH-hI-vnN"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6h-bk-YDL">
-                                <rect key="frame" x="93" y="302.5" width="179" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6h-bk-YDL">
+                                <rect key="frame" x="20" y="302.5" width="335" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ZSW-RP-E5w"/>
                                 </constraints>
@@ -472,7 +472,7 @@
                             <constraint firstItem="MJr-TC-d5f" firstAttribute="leading" secondItem="GeD-kJ-uy1" secondAttribute="leading" constant="65" id="1ws-pB-3Lf"/>
                             <constraint firstItem="GeD-kJ-uy1" firstAttribute="trailing" secondItem="MZt-VJ-w58" secondAttribute="trailing" constant="71" id="B63-z1-WLv"/>
                             <constraint firstItem="f6h-bk-YDL" firstAttribute="top" secondItem="MZt-VJ-w58" secondAttribute="bottom" constant="5" id="DOs-u9-jfA"/>
-                            <constraint firstItem="GeD-kJ-uy1" firstAttribute="trailing" secondItem="f6h-bk-YDL" secondAttribute="trailing" constant="103" id="Egu-wC-O7m"/>
+                            <constraint firstItem="GeD-kJ-uy1" firstAttribute="trailing" secondItem="f6h-bk-YDL" secondAttribute="trailing" constant="20" id="Egu-wC-O7m"/>
                             <constraint firstItem="GeD-kJ-uy1" firstAttribute="trailing" secondItem="1XO-o7-mrT" secondAttribute="trailing" constant="10" id="GIw-uE-Dks"/>
                             <constraint firstItem="1XO-o7-mrT" firstAttribute="leading" secondItem="GeD-kJ-uy1" secondAttribute="leading" constant="10" id="GyP-hE-1L8"/>
                             <constraint firstItem="GeD-kJ-uy1" firstAttribute="trailing" secondItem="ksI-8K-rwK" secondAttribute="trailing" constant="30" id="H4Z-OG-w16"/>
@@ -485,7 +485,7 @@
                             <constraint firstItem="GeD-kJ-uy1" firstAttribute="bottom" secondItem="ksI-8K-rwK" secondAttribute="bottom" constant="20" id="ly2-QU-q6F"/>
                             <constraint firstItem="GeD-kJ-uy1" firstAttribute="trailing" secondItem="MJr-TC-d5f" secondAttribute="trailing" constant="76" id="pjB-cD-0jE"/>
                             <constraint firstItem="MZt-VJ-w58" firstAttribute="leading" secondItem="GeD-kJ-uy1" secondAttribute="leading" constant="70" id="sPj-TM-CWl"/>
-                            <constraint firstItem="f6h-bk-YDL" firstAttribute="leading" secondItem="GeD-kJ-uy1" secondAttribute="leading" constant="93" id="yXe-kr-dl0"/>
+                            <constraint firstItem="f6h-bk-YDL" firstAttribute="leading" secondItem="GeD-kJ-uy1" secondAttribute="leading" constant="20" id="yXe-kr-dl0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GeD-kJ-uy1"/>
                     </view>
@@ -795,7 +795,7 @@
         <image name="logo-recruitbee" width="571" height="201"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ma9-Ao-JkF"/>
-        <segue reference="3XG-2I-feb"/>
+        <segue reference="afu-bm-Lnw"/>
+        <segue reference="Wyq-1p-aqZ"/>
     </inferredMetricsTieBreakers>
 </document>

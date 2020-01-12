@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class StudentMainPageViewController: UIViewController {
 
+    var ref = Database.database().reference()
+    let user = Auth.auth().currentUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

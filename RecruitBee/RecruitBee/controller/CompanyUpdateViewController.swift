@@ -23,6 +23,18 @@ class CompanyUpdateViewController: UIViewController, UIImagePickerControllerDele
         
         profileImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImage)))
         profileImage.isUserInteractionEnabled = true
+        
+        self.ref.child("companies").child(user!.uid).observeSingleEvent(of: .value) { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+                
+            if value == nil {
+                return
+            }
+            else {
+                self.companyNameLabel.text = value!["companyName"] as? String
+            }
+            
+        }
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {

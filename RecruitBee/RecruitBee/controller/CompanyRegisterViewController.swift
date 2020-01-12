@@ -59,5 +59,6 @@ class CompanyRegisterViewController: UIViewController {
         }
 
         self.ref.child("companies/\(user.uid)/companyName").setValue(companyName)
+        performSegue(withIdentifier: "toCompanyUpdate", sender: self)
     }
 }
