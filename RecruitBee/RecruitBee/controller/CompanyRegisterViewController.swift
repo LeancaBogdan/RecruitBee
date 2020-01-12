@@ -11,14 +11,16 @@ import Firebase
 
 class CompanyRegisterViewController: UIViewController {
 
-   
+    var ref: DatabaseReference!
+    
     @IBOutlet weak var companyNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        ref = Database.database().reference()
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -42,9 +44,20 @@ class CompanyRegisterViewController: UIViewController {
                 print(error!)
                 return
             } else {
-                print(authResult!)
+                self.successRegistration()
             }
             
         }
+    }
+    
+    func successRegistration() {
+        guard let companyName = companyNameTextField.text else {
+            return
+        }
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+
+        self.ref.child("companies/\(user.uid)/companyName").setValue(companyName)
     }
 }

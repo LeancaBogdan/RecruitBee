@@ -11,6 +11,8 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
+    var ref = Database.database().reference()
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -35,13 +37,38 @@ class LoginViewController: UIViewController {
                    print("Firebase registration email text field empty")
                    return
                }
+        
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             if error != nil {
-            self?.alert(message: "No user found. Please check your email and password.", title: "Login failed")
-            return
-          } else {
-              // TO DO
-          }
+                self?.alert(message: "No user found. Please check your email and password.", title: "Login failed")
+                return
+            } else {
+                let userID = Auth.auth().currentUser!.uid
+                UserDefaults.standard.setUserId(value: userID)
+                UserDefaults.standard.setIsLoggedIn(value: true)
+                
+                self!.ref.child("students").child(userID).observeSingleEvent(of: .value) { (snapshot) in
+                    let value = snapshot.value as? NSDictionary
+                    
+                    if value != nil {
+                        UserDefaults.standard.setUserType(value: "student")
+                        self?.performSegue(withIdentifier: "loginStudent", sender: self)
+                    } else {
+                        self!.ref.child("companies").child(userID).observeSingleEvent(of: .value) { (snapshot) in
+                            let value = snapshot.value as? NSDictionary
+                            
+                            if value == nil {
+                                return
+                            }
+                            
+                            UserDefaults.standard.setUserType(value: "company")
+                            self?.performSegue(withIdentifier: "loginCompany", sender: self)
+                        }
+                    }
+                    
+                    
+                }
+            }
         }
     }
     

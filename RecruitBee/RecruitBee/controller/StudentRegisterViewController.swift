@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class StudentRegisterViewController: UIViewController {
+    
+    var ref: DatabaseReference!
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -18,7 +20,7 @@ class StudentRegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        ref = Database.database().reference()
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -63,6 +65,20 @@ class StudentRegisterViewController: UIViewController {
     }
     
     func registrationSuccessful() {
+        guard let firstname = firstNameTextField.text else {
+            return
+        }
+        
+        guard let lastname = lastNameTextField.text else {
+            return
+        }
+        
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+
+        self.ref.child("students/\(user.uid)/firstname").setValue(firstname)
+        self.ref.child("students/\(user.uid)/lastname").setValue(lastname)
         performSegue(withIdentifier: "toStudentUpdate", sender: self)
     }
 }

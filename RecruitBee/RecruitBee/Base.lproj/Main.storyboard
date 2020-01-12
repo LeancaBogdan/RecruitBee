@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="RecruitBee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="RecruitBee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,11 +92,13 @@
                         <outlet property="loginButton" destination="16i-A0-Jwr" id="yE0-U6-T02"/>
                         <outlet property="passwordTextField" destination="lBh-dM-ow3" id="g9n-iV-dHZ"/>
                         <segue destination="FI9-If-42C" kind="show" identifier="toRegisterScreen" id="V8e-gu-EYF"/>
+                        <segue destination="Grh-kW-wlo" kind="presentation" identifier="loginCompany" modalPresentationStyle="fullScreen" id="3XG-2I-feb"/>
+                        <segue destination="AFY-6x-iZp" kind="presentation" identifier="loginStudent" modalPresentationStyle="fullScreen" id="Ma9-Ao-JkF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-957.60000000000002" y="-207.34632683658174"/>
+            <point key="canvasLocation" x="-2305" y="-275"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="YKg-OF-SzC">
@@ -491,11 +493,44 @@
                         <outlet property="aboutCompanyTextField" destination="1XO-o7-mrT" id="NWF-UL-jTi"/>
                         <outlet property="companyNameLabel" destination="f6h-bk-YDL" id="MwM-9j-sCk"/>
                         <outlet property="profileImage" destination="MZt-VJ-w58" id="6Uc-Lq-nfx"/>
+                        <segue destination="Grh-kW-wlo" kind="presentation" identifier="toCompanyMainScreen" modalPresentationStyle="currentContext" id="Wyq-1p-aqZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecd-Pc-AQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2164" y="-331.48425787106447"/>
+        </scene>
+        <!--Company Main Page View Controller-->
+        <scene sceneID="30Z-9T-RBd">
+            <objects>
+                <viewController storyboardIdentifier="CompanyMainPageViewController" id="Grh-kW-wlo" customClass="CompanyMainPageViewController" customModule="RecruitBee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NU9-aM-1Rp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lwb-MK-Xks">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Company name" id="fiS-wa-UOc">
+                                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="8x6-tl-6eh">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rLh-WF-2ID">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96872693300247192" green="0.67436307668685913" blue="0.052493758499622345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="wWG-BG-a3R"/>
+                    </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJI-yS-MZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3111" y="-331"/>
         </scene>
         <!--University Register View Controller-->
         <scene sceneID="msv-4l-RQP">
@@ -731,11 +766,27 @@
                         <outlet property="lastNameLabel" destination="Sxs-Nd-3WD" id="XUl-De-zqB"/>
                         <outlet property="profileImage" destination="gGs-OK-jnm" id="k7E-3U-sYL"/>
                         <outlet property="universityTextField" destination="lg9-Sg-Z4P" id="FJG-j6-WzD"/>
+                        <segue destination="AFY-6x-iZp" kind="presentation" identifier="toStudentMainScreen" modalPresentationStyle="fullScreen" id="afu-bm-Lnw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UyB-v5-cPV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1781.5999999999999" y="-1052.9235382308846"/>
+        </scene>
+        <!--Student Main Page View Controller-->
+        <scene sceneID="wmg-TO-Xoj">
+            <objects>
+                <viewController storyboardIdentifier="StudentMainPageViewController" id="AFY-6x-iZp" customClass="StudentMainPageViewController" customModule="RecruitBee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8cy-Y1-9ua">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96872693300247192" green="0.67436307668685913" blue="0.052493758499622345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="497-67-0XL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBR-MX-gqZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3077" y="-1130"/>
         </scene>
     </scenes>
     <resources>
@@ -743,4 +794,8 @@
         <image name="empty-profile-image" width="390" height="341"/>
         <image name="logo-recruitbee" width="571" height="201"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ma9-Ao-JkF"/>
+        <segue reference="3XG-2I-feb"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class StudentUpdateViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -19,6 +20,10 @@ class StudentUpdateViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var facultyTextField: UITextField!
     @IBOutlet weak var domainTextField: UITextField!
     
+    var ref = Database.database().reference()
+    
+    let user = Auth.auth().currentUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +32,41 @@ class StudentUpdateViewController: UIViewController, UIImagePickerControllerDele
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+        guard let university = universityTextField.text else {
+            return
+        }
+        
+        guard let faculty = facultyTextField.text else {
+            return
+        }
+        
+        guard let domain = domainTextField.text else {
+            return
+        }
+        
+        let imageName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("students").child("\(imageName).png")
+        if let uploadData = profileImage.image!.pngData() {
+            storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    return
+                }
+                
+                storageRef.downloadURL { (url, erorr) in
+                    guard let downloadURL = url else {
+                        return
+                    }
+                    
+                    self.ref.child("students/\(self.user!.uid)/university").setValue(university)
+                    self.ref.child("students/\(self.user!.uid)/faculty").setValue(faculty)
+                    self.ref.child("students/\(self.user!.uid)/domain").setValue(domain)
+                    self.ref.child("students/\(self.user!.uid)/profileImageURL").setValue(downloadURL.absoluteString)
+                }
+            }
+            
+            performSegue(withIdentifier: "toStudentMainScreen", sender: self)
+        }
+        
     }
     
     @objc func handleSelectProfileImage() {

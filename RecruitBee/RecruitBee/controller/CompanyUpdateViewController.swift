@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class CompanyUpdateViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var aboutCompanyTextField: UITextField!
+    
+    var ref = Database.database().reference()
+    let user = Auth.auth().currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,36 @@ class CompanyUpdateViewController: UIViewController, UIImagePickerControllerDele
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+        guard let description = aboutCompanyTextField.text else {
+            return
+        }
+        
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        
+        let imageName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("companies").child("\(imageName).png")
+        if let uploadData = profileImage.image!.pngData() {
+            storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    return
+                }
+                
+                storageRef.downloadURL { (url, erorr) in
+                    guard let downloadURL = url else {
+                        return
+                    }
+                    
+                    self.ref.child("companies/\(user.uid)/description").setValue(description)
+                    self.ref.child("companies/\(user.uid)/profileImageURL").setValue(downloadURL.absoluteString)
+                    
+                    
+                }
+            }
+        }
+        
+        performSegue(withIdentifier: "toCompanyMainScreen", sender: self)
     }
     
     @objc func handleSelectProfileImage() {
