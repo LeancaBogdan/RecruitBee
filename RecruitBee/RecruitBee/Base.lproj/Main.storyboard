@@ -24,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u6P-Yg-A6W">
                                 <rect key="frame" x="20" y="230" width="335" height="100"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zzr-eq-2bo">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zzr-eq-2bo">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="46"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -88,9 +88,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="Zzr-eq-2bo" id="tB3-hC-16M"/>
                         <outlet property="loginButton" destination="16i-A0-Jwr" id="yE0-U6-T02"/>
                         <outlet property="passwordTextField" destination="lBh-dM-ow3" id="g9n-iV-dHZ"/>
-                        <outlet property="usernameTextField" destination="Zzr-eq-2bo" id="UPb-gi-wSE"/>
                         <segue destination="FI9-If-42C" kind="show" identifier="toRegisterScreen" id="V8e-gu-EYF"/>
                     </connections>
                 </viewController>

@@ -35,16 +35,31 @@ class StudentRegisterViewController: UIViewController {
             print("Firebase registration email text field empty")
             return
         }
+        
+        if password.count < 6 {
+            self.alert(message: "Your password should be at least 6 characters long", title: "Password too short")
+        }
+        
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             
             if error != nil {
-                print(error!)
+                self.alert(message: "There is another account associated with this email", title: "Registration error")
                 return
             } else {
-                print(authResult!)
+                // TO DO
             }
             
             
+        }
+    }
+    
+    func alert(message: String, title: String = "") {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
         }
     }
 }
