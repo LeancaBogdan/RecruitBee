@@ -11,8 +11,8 @@ import Firebase
 
 class CompanyRegisterViewController: UIViewController {
 
-    @IBOutlet weak var firstNameTextField: UIStackView!
-    @IBOutlet weak var lastNameTextField: UIStackView!
+   
+    @IBOutlet weak var companyNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {

@@ -47,9 +47,8 @@ class StudentRegisterViewController: UIViewController {
                 return
             } else {
                 // TO DO
+                self.registrationSuccessful()
             }
-            
-            
         }
     }
     
@@ -61,5 +60,9 @@ class StudentRegisterViewController: UIViewController {
         DispatchQueue.main.async {
             self.present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    func registrationSuccessful() {
+        performSegue(withIdentifier: "toStudentUpdate", sender: self)
     }
 }

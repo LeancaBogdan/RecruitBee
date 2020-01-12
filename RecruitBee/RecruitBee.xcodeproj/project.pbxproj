@@ -12,6 +12,8 @@
 		6975DFA323CB5140008FDDAE /* StudentRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DFA223CB5140008FDDAE /* StudentRegisterViewController.swift */; };
 		6975DFA523CB5151008FDDAE /* CompanyRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DFA423CB5151008FDDAE /* CompanyRegisterViewController.swift */; };
 		6975DFA723CB5160008FDDAE /* UniversityRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DFA623CB5160008FDDAE /* UniversityRegisterViewController.swift */; };
+		6975DFA923CB72D5008FDDAE /* StudentUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DFA823CB72D5008FDDAE /* StudentUpdateViewController.swift */; };
+		6975DFAB23CB72E3008FDDAE /* CompanyUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DFAA23CB72E3008FDDAE /* CompanyUpdateViewController.swift */; };
 		BBCBB5267AA5A5C7C881FB0A /* Pods_RecruitBee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E033384C1F6D0A763C72EA1 /* Pods_RecruitBee.framework */; };
 		FD48DF5623CA319900BE3B52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD48DF5523CA319900BE3B52 /* AppDelegate.swift */; };
 		FD48DF5823CA319900BE3B52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD48DF5723CA319900BE3B52 /* SceneDelegate.swift */; };
@@ -41,6 +43,8 @@
 		6975DFA223CB5140008FDDAE /* StudentRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRegisterViewController.swift; sourceTree = "<group>"; };
 		6975DFA423CB5151008FDDAE /* CompanyRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRegisterViewController.swift; sourceTree = "<group>"; };
 		6975DFA623CB5160008FDDAE /* UniversityRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityRegisterViewController.swift; sourceTree = "<group>"; };
+		6975DFA823CB72D5008FDDAE /* StudentUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentUpdateViewController.swift; sourceTree = "<group>"; };
+		6975DFAA23CB72E3008FDDAE /* CompanyUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyUpdateViewController.swift; sourceTree = "<group>"; };
 		8AE2196B40F6EEEE5385324E /* Pods-RecruitBee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecruitBee.release.xcconfig"; path = "Target Support Files/Pods-RecruitBee/Pods-RecruitBee.release.xcconfig"; sourceTree = "<group>"; };
 		A47BAF04B4F0B16662A4A308 /* Pods_RecruitBeeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecruitBeeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E38A9E9F0DFED0EFF00DE58D /* Pods-RecruitBeeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecruitBeeTests.release.xcconfig"; path = "Target Support Files/Pods-RecruitBeeTests/Pods-RecruitBeeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				6975DFA223CB5140008FDDAE /* StudentRegisterViewController.swift */,
 				6975DFA423CB5151008FDDAE /* CompanyRegisterViewController.swift */,
 				6975DFA623CB5160008FDDAE /* UniversityRegisterViewController.swift */,
+				6975DFA823CB72D5008FDDAE /* StudentUpdateViewController.swift */,
+				6975DFAA23CB72E3008FDDAE /* CompanyUpdateViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -333,11 +339,13 @@
 			files = (
 				FD48DF5A23CA319900BE3B52 /* LoginViewController.swift in Sources */,
 				6975DFA523CB5151008FDDAE /* CompanyRegisterViewController.swift in Sources */,
+				6975DFAB23CB72E3008FDDAE /* CompanyUpdateViewController.swift in Sources */,
 				6975DFA723CB5160008FDDAE /* UniversityRegisterViewController.swift in Sources */,
 				FD48DF5623CA319900BE3B52 /* AppDelegate.swift in Sources */,
 				FD48DF5823CA319900BE3B52 /* SceneDelegate.swift in Sources */,
 				6975DFA323CB5140008FDDAE /* StudentRegisterViewController.swift in Sources */,
 				6975DF9F23CB43E5008FDDAE /* RegisterViewController.swift in Sources */,
+				6975DFA923CB72D5008FDDAE /* StudentUpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
