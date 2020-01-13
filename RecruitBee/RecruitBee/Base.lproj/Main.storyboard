@@ -508,29 +508,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lwb-MK-Xks">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eqy-Ck-iwh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Company name" id="fiS-wa-UOc">
-                                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="8x6-tl-6eh">
+                                    <navigationItem title="Company Name" id="51D-1P-MzC">
+                                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="MjC-pL-IZK">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="signOutButtonPressed:" destination="Grh-kW-wlo" id="cdw-3p-7hB"/>
+                                            </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rLh-WF-2ID">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vL4-eN-09f">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="addJobOfferButtonPressed:" destination="Grh-kW-wlo" id="qm5-SP-xgM"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nix-Fm-tAR">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XLl-xF-a9W">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XLl-xF-a9W" id="O3u-EA-bpX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96872693300247192" green="0.67436307668685913" blue="0.052493758499622345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Eqy-Ck-iwh" firstAttribute="leading" secondItem="wWG-BG-a3R" secondAttribute="leading" id="1Od-hX-MHx"/>
+                            <constraint firstItem="nix-Fm-tAR" firstAttribute="top" secondItem="Eqy-Ck-iwh" secondAttribute="bottom" symbolic="YES" id="7gL-ek-XAU"/>
+                            <constraint firstItem="wWG-BG-a3R" firstAttribute="bottom" secondItem="nix-Fm-tAR" secondAttribute="bottom" id="B8M-s5-6aR"/>
+                            <constraint firstItem="wWG-BG-a3R" firstAttribute="trailing" secondItem="nix-Fm-tAR" secondAttribute="trailing" id="NqA-cv-Nmc"/>
+                            <constraint firstItem="nix-Fm-tAR" firstAttribute="leading" secondItem="wWG-BG-a3R" secondAttribute="leading" id="TrW-Y0-Rwt"/>
+                            <constraint firstItem="Eqy-Ck-iwh" firstAttribute="top" secondItem="wWG-BG-a3R" secondAttribute="top" id="Ypn-mI-olT"/>
+                            <constraint firstAttribute="trailing" secondItem="Eqy-Ck-iwh" secondAttribute="trailing" id="rrU-Uj-Ndz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wWG-BG-a3R"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="Eqy-Ck-iwh" id="nI7-4I-WrV"/>
+                        <outlet property="signOutButton" destination="MjC-pL-IZK" id="ywb-DE-YXC"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutCompany" modalPresentationStyle="fullScreen" id="6dv-Z3-rdb"/>
+                        <segue destination="Z8u-3Q-jfp" kind="presentation" identifier="toJobCreate" modalPresentationStyle="fullScreen" id="TBb-02-NoZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJI-yS-MZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3111" y="-331"/>
+            <point key="canvasLocation" x="3265" y="-331"/>
+        </scene>
+        <!--Job Create View Controller-->
+        <scene sceneID="9fF-Cp-3Yu">
+            <objects>
+                <viewController id="Z8u-3Q-jfp" customClass="JobCreateViewController" customModule="RecruitBee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="leF-hb-5Ur">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96872693300247192" green="0.67436307668685913" blue="0.052493758499622345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="fVH-dv-KCV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38v-II-uva" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4033" y="-322"/>
         </scene>
         <!--University Register View Controller-->
         <scene sceneID="msv-4l-RQP">
@@ -795,7 +844,7 @@
         <image name="logo-recruitbee" width="571" height="201"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="afu-bm-Lnw"/>
-        <segue reference="Wyq-1p-aqZ"/>
+        <segue reference="Ma9-Ao-JkF"/>
+        <segue reference="3XG-2I-feb"/>
     </inferredMetricsTieBreakers>
 </document>

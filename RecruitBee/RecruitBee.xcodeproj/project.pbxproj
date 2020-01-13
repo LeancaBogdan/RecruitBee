@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D137CA912791E97274F20A2 /* Pods_RecruitBeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47BAF04B4F0B16662A4A308 /* Pods_RecruitBeeTests.framework */; };
+		696BD03B23CCF4F800564212 /* JobCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696BD03A23CCF4F800564212 /* JobCreateViewController.swift */; };
 		6975DF9F23CB43E5008FDDAE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DF9E23CB43E5008FDDAE /* RegisterViewController.swift */; };
 		6975DFA323CB5140008FDDAE /* StudentRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DFA223CB5140008FDDAE /* StudentRegisterViewController.swift */; };
 		6975DFA523CB5151008FDDAE /* CompanyRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DFA423CB5151008FDDAE /* CompanyRegisterViewController.swift */; };
@@ -42,6 +43,7 @@
 		15BDB2335B5821A5BC37FA63 /* Pods-RecruitBeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecruitBeeTests.debug.xcconfig"; path = "Target Support Files/Pods-RecruitBeeTests/Pods-RecruitBeeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		21EF7B6D6ACCA8FEE3267E98 /* Pods-RecruitBee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecruitBee.debug.xcconfig"; path = "Target Support Files/Pods-RecruitBee/Pods-RecruitBee.debug.xcconfig"; sourceTree = "<group>"; };
 		2E033384C1F6D0A763C72EA1 /* Pods_RecruitBee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecruitBee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		696BD03A23CCF4F800564212 /* JobCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCreateViewController.swift; sourceTree = "<group>"; };
 		6975DF9E23CB43E5008FDDAE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6975DFA223CB5140008FDDAE /* StudentRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRegisterViewController.swift; sourceTree = "<group>"; };
 		6975DFA423CB5151008FDDAE /* CompanyRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRegisterViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				6975DFAA23CB72E3008FDDAE /* CompanyUpdateViewController.swift */,
 				6975DFAC23CBD099008FDDAE /* CompanyMainPageViewController.swift */,
 				6975DFB023CBDDF5008FDDAE /* StudentMainPageViewController.swift */,
+				696BD03A23CCF4F800564212 /* JobCreateViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				6975DFA323CB5140008FDDAE /* StudentRegisterViewController.swift in Sources */,
 				6975DF9F23CB43E5008FDDAE /* RegisterViewController.swift in Sources */,
 				6975DFAD23CBD099008FDDAE /* CompanyMainPageViewController.swift in Sources */,
+				696BD03B23CCF4F800564212 /* JobCreateViewController.swift in Sources */,
 				6975DFA923CB72D5008FDDAE /* StudentUpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
