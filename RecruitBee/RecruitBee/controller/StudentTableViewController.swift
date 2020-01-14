@@ -109,16 +109,17 @@ class StudentTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showJob" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let destination = segue.destination as! JobViewController
+                destination.jobId = Array(data.keys)[indexPath.row] as String
+                
+            }
+        }
     }
-    */
-
+    
     func populateTableView() {
          ref.child("jobs").observeSingleEvent(of: .value) { (snapshot) in
              let values = snapshot.value as? [String:[String:String]]

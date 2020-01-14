@@ -13,6 +13,7 @@
 		696BD03F23CD343F00564212 /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696BD03E23CD343F00564212 /* CompanyTableViewCell.swift */; };
 		696BD04123CD511500564212 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696BD04023CD511500564212 /* StudentTableViewCell.swift */; };
 		696BD04323CD513200564212 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696BD04223CD513200564212 /* StudentTableViewController.swift */; };
+		696BD04523CDBC8A00564212 /* JobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696BD04423CDBC8A00564212 /* JobViewController.swift */; };
 		6975DF9F23CB43E5008FDDAE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DF9E23CB43E5008FDDAE /* RegisterViewController.swift */; };
 		6975DFA323CB5140008FDDAE /* StudentRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DFA223CB5140008FDDAE /* StudentRegisterViewController.swift */; };
 		6975DFA523CB5151008FDDAE /* CompanyRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6975DFA423CB5151008FDDAE /* CompanyRegisterViewController.swift */; };
@@ -51,6 +52,7 @@
 		696BD03E23CD343F00564212 /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
 		696BD04023CD511500564212 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		696BD04223CD513200564212 /* StudentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
+		696BD04423CDBC8A00564212 /* JobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewController.swift; sourceTree = "<group>"; };
 		6975DF9E23CB43E5008FDDAE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6975DFA223CB5140008FDDAE /* StudentRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRegisterViewController.swift; sourceTree = "<group>"; };
 		6975DFA423CB5151008FDDAE /* CompanyRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRegisterViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				696BD03E23CD343F00564212 /* CompanyTableViewCell.swift */,
 				696BD04023CD511500564212 /* StudentTableViewCell.swift */,
 				696BD04223CD513200564212 /* StudentTableViewController.swift */,
+				696BD04423CDBC8A00564212 /* JobViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				696BD04323CD513200564212 /* StudentTableViewController.swift in Sources */,
 				6975DFB123CBDDF5008FDDAE /* StudentMainPageViewController.swift in Sources */,
 				696BD03F23CD343F00564212 /* CompanyTableViewCell.swift in Sources */,
+				696BD04523CDBC8A00564212 /* JobViewController.swift in Sources */,
 				6975DFAB23CB72E3008FDDAE /* CompanyUpdateViewController.swift in Sources */,
 				6975DFAF23CBD696008FDDAE /* UserDefaults.swift in Sources */,
 				6975DFA723CB5160008FDDAE /* UniversityRegisterViewController.swift in Sources */,

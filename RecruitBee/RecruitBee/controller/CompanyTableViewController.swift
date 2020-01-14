@@ -79,6 +79,11 @@ class CompanyTableViewController: UITableViewController {
     func populateTableView() {
         ref.child("jobs").observeSingleEvent(of: .value) { (snapshot) in
             let values = snapshot.value as? [String:[String:String]]
+            
+            if values == nil {
+                return
+            }
+            
             for (key, value) in values! {
                 let v = value
                 if v["uid"] == self.user?.uid {

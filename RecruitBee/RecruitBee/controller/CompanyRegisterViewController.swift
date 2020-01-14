@@ -54,11 +54,18 @@ class CompanyRegisterViewController: UIViewController {
         guard let companyName = companyNameTextField.text else {
             return
         }
+        
+        guard let email = emailTextField.text else {
+            print("Firebase registration email text field empty")
+            return
+        }
+        
         guard let user = Auth.auth().currentUser else {
             return
         }
 
         self.ref.child("companies/\(user.uid)/companyName").setValue(companyName)
+        self.ref.child("companies/\(user.uid)/email").setValue(email)
         performSegue(withIdentifier: "toCompanyUpdate", sender: self)
     }
 }

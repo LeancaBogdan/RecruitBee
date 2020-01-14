@@ -706,6 +706,82 @@
             </objects>
             <point key="canvasLocation" x="4396" y="-441.22938530734638"/>
         </scene>
+        <!--Job View Controller-->
+        <scene sceneID="6N8-8x-gNa">
+            <objects>
+                <viewController id="O4r-Ld-jd2" customClass="JobViewController" customModule="RecruitBee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IbZ-vv-R0d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXW-99-YTd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Job name" id="kne-7p-GRm">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="sPH-3X-aIL">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="O4r-Ld-jd2" id="bjU-11-gDu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-profile-image" translatesAutoresizingMaskIntoConstraints="NO" id="U8R-6A-4l1">
+                                <rect key="frame" x="112.5" y="74" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="VeI-Jg-Ua0"/>
+                                    <constraint firstAttribute="width" constant="150" id="lr1-42-n9s"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mf6-XC-FBF">
+                                <rect key="frame" x="30" y="567" width="315" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UK7-yd-eDG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Apply">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="applyButtonPressed:" destination="O4r-Ld-jd2" eventType="touchUpInside" id="gI2-uZ-Nwo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2n-xh-DpE">
+                                <rect key="frame" x="20" y="269" width="335" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96872693300247192" green="0.67436307668685913" blue="0.052493758499622345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tCJ-VI-AxW" firstAttribute="trailing" secondItem="f2n-xh-DpE" secondAttribute="trailing" constant="20" id="4Em-4i-Ykl"/>
+                            <constraint firstItem="tCJ-VI-AxW" firstAttribute="trailing" secondItem="Mf6-XC-FBF" secondAttribute="trailing" constant="30" id="5N6-7r-7Dh"/>
+                            <constraint firstItem="f2n-xh-DpE" firstAttribute="top" secondItem="U8R-6A-4l1" secondAttribute="bottom" constant="45" id="9Ko-yW-ngx"/>
+                            <constraint firstItem="yXW-99-YTd" firstAttribute="trailing" secondItem="tCJ-VI-AxW" secondAttribute="trailing" id="Dvn-ab-sp9"/>
+                            <constraint firstItem="yXW-99-YTd" firstAttribute="top" secondItem="tCJ-VI-AxW" secondAttribute="top" id="IZL-aG-wLc"/>
+                            <constraint firstItem="Mf6-XC-FBF" firstAttribute="leading" secondItem="tCJ-VI-AxW" secondAttribute="leading" constant="30" id="Y7S-Hf-fHw"/>
+                            <constraint firstItem="U8R-6A-4l1" firstAttribute="centerX" secondItem="tCJ-VI-AxW" secondAttribute="centerX" id="Yq0-P6-CJI"/>
+                            <constraint firstItem="f2n-xh-DpE" firstAttribute="leading" secondItem="tCJ-VI-AxW" secondAttribute="leading" constant="20" id="eoM-fd-4wK"/>
+                            <constraint firstItem="U8R-6A-4l1" firstAttribute="top" secondItem="yXW-99-YTd" secondAttribute="bottom" constant="30" id="fPy-0a-tv2"/>
+                            <constraint firstItem="yXW-99-YTd" firstAttribute="leading" secondItem="tCJ-VI-AxW" secondAttribute="leading" id="pQi-9P-7ks"/>
+                            <constraint firstItem="tCJ-VI-AxW" firstAttribute="bottom" secondItem="Mf6-XC-FBF" secondAttribute="bottom" constant="50" id="uyG-r1-37y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tCJ-VI-AxW"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="U8R-6A-4l1" id="hU3-0E-Jri"/>
+                        <outlet property="navigationBar" destination="yXW-99-YTd" id="3Za-Z2-FDp"/>
+                        <outlet property="textLabel" destination="f2n-xh-DpE" id="s8A-nv-mqb"/>
+                        <segue destination="13I-36-Keg" kind="presentation" identifier="backBack" modalPresentationStyle="fullScreen" id="dyy-Wc-dth"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hr4-ht-j97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3752.8000000000002" y="-1053.8230884557722"/>
+        </scene>
         <!--University Register View Controller-->
         <scene sceneID="msv-4l-RQP">
             <objects>
@@ -950,7 +1026,7 @@
         <!--Student Table View Controller-->
         <scene sceneID="73K-Vp-un1">
             <objects>
-                <tableViewController id="13I-36-Keg" customClass="StudentTableViewController" customModule="RecruitBee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StudentMainPageViewController" id="13I-36-Keg" customClass="StudentTableViewController" customModule="RecruitBee" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="COM-Tz-2tl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1023,6 +1099,7 @@
                                     <outlet property="durationTextField" destination="Ope-ia-1Fa" id="vn0-To-yCb"/>
                                     <outlet property="jobImage" destination="ots-5u-6nZ" id="Y3S-de-Eho"/>
                                     <outlet property="jobTitle" destination="HvF-ec-QX7" id="wZ0-jF-UqQ"/>
+                                    <segue destination="O4r-Ld-jd2" kind="presentation" identifier="showJob" modalPresentationStyle="fullScreen" id="YfX-EP-hvk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1047,8 +1124,8 @@
         <image name="logo-recruitbee" width="571" height="201"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JkW-et-6tj"/>
-        <segue reference="nE7-1M-TLO"/>
+        <segue reference="dyy-Wc-dth"/>
+        <segue reference="qmv-UU-QKi"/>
         <segue reference="UBy-E1-XbP"/>
     </inferredMetricsTieBreakers>
 </document>
